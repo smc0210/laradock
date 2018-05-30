@@ -4,8 +4,9 @@
 
 ### Paths #################################################
 
+
 # Point to the path of your applications code on your host
-APP_CODE_PATH_HOST=../
+APP_CODE_PATH_HOST=../minda-api/
 
 # Point to where the `APP_CODE_PATH_HOST` should be in the container. You may add flags to the path `:cached`, `:delegated`. When using Docker Sync add `:nocopy`
 APP_CODE_PATH_CONTAINER=/var/www:cached
@@ -93,7 +94,7 @@ WORKSPACE_INSTALL_DRUPAL_CONSOLE=false
 WORKSPACE_INSTALL_AEROSPIKE=false
 WORKSPACE_INSTALL_V8JS=false
 WORKSPACE_INSTALL_LARAVEL_ENVOY=false
-WORKSPACE_INSTALL_LARAVEL_INSTALLER=false
+WORKSPACE_INSTALL_LARAVEL_INSTALLER=true
 WORKSPACE_INSTALL_DEPLOYER=false
 WORKSPACE_INSTALL_PRESTISSIMO=false
 WORKSPACE_INSTALL_LINUXBREW=false
@@ -109,7 +110,7 @@ WORKSPACE_INSTALL_SWOOLE=false
 WORKSPACE_PUID=1000
 WORKSPACE_PGID=1000
 WORKSPACE_CHROME_DRIVER_VERSION=2.32
-WORKSPACE_TIMEZONE=UTC
+WORKSPACE_TIMEZONE=Asia/Seoul
 WORKSPACE_SSH_PORT=2222
 
 ### PHP_FPM ###############################################
@@ -162,7 +163,7 @@ APACHE_SITES_PATH=./apache2/sites
 APACHE_PHP_UPSTREAM_CONTAINER=php-fpm
 APACHE_PHP_UPSTREAM_PORT=9000
 APACHE_PHP_UPSTREAM_TIMEOUT=60
-APACHE_DOCUMENT_ROOT=/var/www/
+APACHE_DOCUMENT_ROOT=/var/www/public
 
 ### MYSQL #################################################
 
@@ -198,7 +199,7 @@ MSSQL_PORT=1433
 MARIADB_DATABASE=default
 MARIADB_USER=default
 MARIADB_PASSWORD=secret
-MARIADB_PORT=3306
+MARIADB_PORT=3308
 MARIADB_ROOT_PASSWORD=root
 MARIADB_ENTRYPOINT_INITDB=./mariadb/docker-entrypoint-initdb.d
 
@@ -349,3 +350,7 @@ LARAVEL_ECHO_SERVER_PORT=6001
 SOLR_VERSION=5.5
 SOLR_PORT=8983
 SOLR_DATAIMPORTHANDLER_MYSQL=false
+
+### ADD ##################################################
+
+WEB_PORT=80
