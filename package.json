@@ -1,0 +1,30 @@
+{
+  "name": "minda_web_docker",
+  "version": "1.0.0",
+  "description": "minda web local docker envirment",
+  "main": "index.js",
+  "scripts": {
+    "init": "node index",
+    "start": "docker-compose up --build",
+    "start:server": "docker-compose up --build web",
+    "start:server-redis": "docker-compose up --build web redis",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tienne@bitbucket.org/theminda/web_docker.git"
+  },
+  "author": "david",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/theminda/web_docker#readme",
+  "devDependencies": {
+    "chalk": "^2.3.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "dockerode": "^2.5.3",
+    "dotenv": "^4.0.0",
+    "fs-extra": "^4.0.2"
+  }
+}
