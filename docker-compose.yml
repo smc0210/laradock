@@ -100,6 +100,7 @@ services:
       tty: true
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
+      container_name: "workspace-${PHP_VERSION}"
       networks:
         - frontend
         - backend
@@ -144,6 +145,7 @@ services:
         - "dockerhost:${DOCKER_HOST_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
+      container_name: "php-${PHP_VERSION}"
       depends_on:
         - workspace
       networks:
@@ -199,6 +201,7 @@ services:
 
 ### Apache Server ########################################
     apache2:
+      image: "apache-${PHP_VERSION}"
       build:
         context: ./apache2
         args:
@@ -210,6 +213,7 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
         - ${APACHE_HOST_LOG_PATH}:/var/log/apache2
         - ${APACHE_SITES_PATH}:/etc/apache2/sites-available
+      container_name: "minda-api-${PHP_VERSION}"
       ports:
         - "${APACHE_HOST_HTTP_PORT}:80"
         - "${APACHE_HOST_HTTPS_PORT}:443"
