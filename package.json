@@ -1,23 +1,19 @@
 {
-  "name": "minda_web_docker",
+  "name": "minda_laravel_docker",
   "version": "1.0.0",
-  "description": "minda web local docker envirment",
+  "description": "minda api local docker envirment",
   "main": "index.js",
   "scripts": {
-    "init": "node index",
-    "start": "docker-compose up --build",
-    "start:server": "docker-compose up --build web",
-    "start:server-redis": "docker-compose up --build web redis",
+    "start": "docker-compose up --build apache2 php-fpm",
     "stop": "docker-compose stop",
     "down": "docker-compose down"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://tienne@bitbucket.org/theminda/web_docker.git"
+    "url": "git+https://smc0210@github.com/smc0210/laradock.git"
   },
-  "author": "david",
+  "author": "wisdom",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/theminda/web_docker#readme",
   "devDependencies": {
     "chalk": "^2.3.0",
     "typescript": "^2.6.2"

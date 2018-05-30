@@ -36,7 +36,9 @@ RUN apt-get update -yqq && \
     pecl channel-update pecl.php.net && \
     groupadd -g ${PGID} laradock && \
     useradd -u ${PUID} -g laradock -m laradock -G docker_env && \
-    usermod -p "*" laradock
+    usermod -p "*" laradock && \
+    apt-get install -y vim
+
 
 #
 #--------------------------------------------------------------------------
@@ -65,7 +67,7 @@ RUN apt-get update -yqq && \
 # Set Timezone
 ###########################################################################
 
-ARG TZ=UTC
+ARG TZ=Asia/Seoul
 ENV TZ ${TZ}
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
